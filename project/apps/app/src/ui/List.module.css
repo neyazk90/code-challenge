@@ -1,0 +1,18 @@
+.gridCard {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+ gap: 16px;
+ padding: 0;
+ list-style: none;
+}
+
+.gridCard li {
+ background-color: #f4f4f9;
+ padding: 10px;
+ border: 1px solid #ddd;
+ border-radius: 8px;
+ text-align: center;
+ font-size: 16px;
+ font-weight: bold;
+ text-transform: capitalize;
+}
