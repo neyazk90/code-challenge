@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { List } from 'ui'
+import  List  from './ui/List'
 
 const api = "https://pokeapi.co/api/v2/pokemon?limit=151"
 
