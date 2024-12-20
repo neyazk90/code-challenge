@@ -1,11 +1,24 @@
+import { useDispatch } from "react-redux";
+import { removeItem } from "../store/slices/pokemonListSlice";
 
-interface ListItemProps {
+interface iListItemProps {
   name: string;
 }
-  
-const ListItem: React.FC<ListItemProps> = ({ name }) => {
-  return <li>{name}</li>;
+
+const ListItem: React.FC<iListItemProps> = ({ name }) => {
+  const dispatch = useDispatch();
+  const handleRemove = () => {
+    dispatch(removeItem(name));
+  };
+
+  return (
+    <>
+      <li>
+        {name}
+        <button onClick={handleRemove} className="mt-20px"> Remove </button>
+      </li>
+    </>
+  );
 };
-  
+
 export default ListItem;
-  

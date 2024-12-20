@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import  List  from './ui/List'
 import { useDispatch } from 'react-redux';
 import { addItem } from './store/slices/pokemonListSlice';
@@ -7,14 +7,14 @@ const api = "https://pokeapi.co/api/v2/pokemon?limit=151"
 
 const App = () => {
   const dispatch = useDispatch();
-  const [pokemon, setPokemon] = useState([]);
+  // const [pokemon, setPokemon] = useState([]);
 
   useEffect(() => {
     const fetchPokemon = async () => {
       try {
         const response = await fetch(api);
         const data = await response.json();
-        setPokemon(data.results);
+        // setPokemon(data.results);
         dispatch(addItem(data.results));
       } catch (error) {
         console.error("Error fetching Pokémon:", error);
@@ -37,7 +37,7 @@ Further optimizations
   return (
   <>
     <h1>Pokemon list:</h1>
-    <List items={pokemon} />
+    <List />
   </>
   )
 }
